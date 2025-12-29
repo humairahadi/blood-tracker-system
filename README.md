@@ -1,5 +1,5 @@
 # IMS566-PAIRING-
-## GitHub Pages live link:
+## GitHub Pages live link: https://humairahadi.github.io/IMS566-PAIRING-/
 ## GitHub repository link:
 
 ## Project Description
