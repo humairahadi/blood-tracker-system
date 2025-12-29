@@ -1,6 +1,6 @@
 # IMS566-PAIRING-PROJECT
-# GitHub Pages live link: https://humairahadi.github.io/IMS566-PAIRING-/
-# GitHub repository link: https://github.com/humairahadi/IMS566-PAIRING-.git
+GitHub Pages live link: https://humairahadi.github.io/IMS566-PAIRING-/
+GitHub repository link: https://github.com/humairahadi/IMS566-PAIRING-.git
 
 ## Project Description
 The Blood Tracker System is a web-based application developed as an pairing project for the IMS566 (Advanced Web Design Development and Content Management) course. The system is designed to help manage and track and requests blood donation and blood availability. This project demonstrates the application of modern web design principles, responsive layout, and effective content management through a functional web application interface.
