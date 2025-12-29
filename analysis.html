@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="logo 2.png">
+    <title>Analytics | Blood Tracker System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<nav class="bg-red-800 text-white p-4 flex justify-between items-center shadow-md">
+    <a href="dashboard.html" class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+        <span class="text-xl font-bold">Blood Tracker System</span>
+    </a>
+
+    <!-- HAMBURGER (Mobile) -->
+<button class="md:hidden text-white" onclick="toggleMenu()">
+    ☰
+</button>
+
+    <ul id="nav-links" class="hidden md:flex items-center gap-6">
+        <li><a href="dashboard.html" class="px-4 py-2 rounded-lg hover:bg-red-700">Dashboard</a></li>
+        <li><a href="analysis.html" class="px-4 py-2 rounded-lg bg-red-900">Analytics</a></li>
+        <li><a href="blood-requests.html" class="px-4 py-2 rounded-lg hover:bg-red-700">Requests</a></li>
+        <li><a href="blood-stock.html" class="px-4 py-2 rounded-lg hover:bg-red-700">Blood Stock</a></li>
+        <li><a href="index.html" class="px-4 py-2 rounded-lg hover:bg-red-700">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="p-6">
+    <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Detailed Data Analytics</h2>
+        <p class="text-gray-600 italic">Comprehensive visualization of donation data and blood stock.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        
+        <div class="bg-white p-6 rounded-xl shadow border-t-4 border-red-600">
+            <h3 class="text-lg font-semibold mb-4 text-gray-700">Monthly Donation Trend (2025)</h3>
+            <div style="height: 350px;">
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow border-t-4 border-red-800 text-center">
+            <h3 class="text-lg font-semibold mb-4 text-left text-gray-700">Stock Distribution Percentage</h3>
+            <div class="inline-block w-full" style="max-height: 350px;">
+                <canvas id="distributionChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r-lg shadow-sm">
+        <h4 class="font-bold text-red-800">Quick Insight:</h4>
+        <p class="text-red-700">Based on the data above, donations increased by 30% in December[cite: 28]. However, the stock of blood type AB- is still below critical levels.</p>
+    </div>
+</div>
+
+<footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    <p>© 2025 Blood Tracker System | IMS566</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('ul');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex-col');
+        menu.classList.toggle('absolute');
+        menu.classList.toggle('top-16');
+        menu.classList.toggle('left-0');
+        menu.classList.toggle('bg-red-800');
+        menu.classList.toggle('w-full');
+    }
+
+    // Carta 1: Line Chart
+    const ctx1 = document.getElementById('trendChart');
+    new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Blood Units Donated',
+                data: [45, 60, 55, 75, 65, 98],
+                borderColor: '#991b1b',
+                backgroundColor: 'rgba(153, 27, 27, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+
+    // Carta 2: Doughnut Chart
+    const ctx2 = document.getElementById('distributionChart');
+    new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+            labels: ['Type O', 'Type A', 'Type B', 'Type AB'],
+            datasets: [{
+                data: [35, 25, 25, 15],
+                backgroundColor: ['#7f1d1d', '#b91c1c', '#ef4444', '#f87171'],
+                borderWidth: 2
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' }
+            }
+        }
+    });
+</script>
+</body>
+</html>
