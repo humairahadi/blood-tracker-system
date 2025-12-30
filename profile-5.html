@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="logo 2.png">
+    <title>Student Profile | Blood Tracker System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- NAVIGATION -->
+<nav class="bg-red-800 text-white px-6 py-4 flex items-center justify-between">
+    <a class="flex items-center gap-3">
+        <img src="logo.png"
+             alt="Blood Tracker Logo"
+             class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-lg">
+        <span class="text-xl font-bold">Blood Tracker System</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-6">
+        <li>
+            <a href="dashboard.html" class="px-4 py-2 rounded-lg hover:bg-red-700">
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="profile.html" class="px-4 py-2 rounded-lg bg-red-900">
+                Student Profile
+            </a>
+        </li>
+        <li>
+            <a href="analysis.html" class="px-4 py-2 rounded-lg hover:bg-red-700">
+                Analysis
+            </a>
+        </li>
+
+          <li>
+        <a href="blood-requests.html"
+           class="px-4 py-2 rounded-lg hover:bg-red-700">
+           Requests
+        </a>
+    </li>
+
+        <li>
+            <a href="blood-stock.html" class="px-4 py-2 rounded-lg hover:bg-red-700">
+                Blood Stock
+            </a>
+        </li>
+        <li>
+            <a href="index.html" class="px-4 py-2 rounded-lg hover:bg-red-700">
+                Logout
+            </a>
+        </li>
+    </ul>
+    <!-- HAMBURGER (Mobile) -->
+<button class="md:hidden text-white" onclick="toggleMenu()">
+    ☰
+</button>
+</nav>
+
+<!-- PROFILE CONTENT -->
+<div class="max-w-6xl mx-auto p-6">
+
+    <h2 class="text-2xl font-bold mb-6">
+        Student e-Profile
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- PROFILE CARD -->
+        <div class="bg-white p-12 rounded-xl shadow text-center">
+            <img src="pic.png"
+                 class="mx-auto rounded-full border-4 border-red-700 mb-4"
+                 alt="Student Photo">
+
+            <h3 class="text-xl font-semibold">Hafiz Zamri</h3>
+            <p class="text-gray-600">Student Blood Donor</p>
+
+            <div class="mt-4 text-sm text-gray-500">
+                <p><strong>Student ID:</strong> 2025227549</p>
+                <p><strong>Faculty:</strong> FSKM</p>
+                <p><strong>Campus:</strong> UiTM Shah Alam</p>
+            </div>
+        </div>
+
+        <!-- STUDENT INFORMATION -->
+        <div class="md:col-span-2 space-y-6">
+
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h4 class="text-lg font-semibold mb-4 text-red-700">
+                    Student Information
+                </h4>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+                    <p><strong>Full Name:</strong> Muhammad Hafiz Zamri bin Khairul</p>
+                    <p><strong>Email:</strong> hafiz@student.uitm.edu.my</p>
+                    <p><strong>Programme:</strong> Bachelor of Information Technology (Hons.)</p>               <p><strong>Semester:</strong> Semester 4</p>
+                    <p><strong>Faculty:</strong> Faculty of Computer Science and Mathematics</p>
+                    <p><strong>Contact:</strong> 012-7594835</p>
+                </div>
+            </div>
+
+            <!-- BLOOD DONATION INFORMATION -->
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h4 class="text-lg font-semibold mb-4 text-red-700">
+                    Blood Donation Information
+                </h4>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+                    <p><strong>Blood Type:</strong> B-</p>
+                    <p><strong>Total Donations:</strong> 2</p>
+                    <p><strong>Last Donation:</strong> 23 November 2025</p>
+                    <p><strong>Eligibility Status:</strong>
+                        <span class="text-green-600 font-semibold">Eligible</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="max-w-6xl mx-auto px-6 mt-8 mb-10">
+    <div class="flex justify-between">
+
+        <a href="profile-4.html"
+           class="px-5 py-2 border border-red-700 text-red-700 rounded-lg hover:bg-red-700 hover:text-white transition">
+            ← Previous
+        </a>
+
+    </div>
+</div>
+
+
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    © 2025 Blood Tracker System | IMS566
+</footer>
+
+<!-- JAVASCRIPT -->
+ <script>
+function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("hidden");
+    menu.classList.toggle("flex");
+    menu.classList.toggle("flex-col");
+    menu.classList.toggle("absolute");
+    menu.classList.toggle("top-16");
+    menu.classList.toggle("right-6");
+    menu.classList.toggle("bg-red-800");
+    menu.classList.toggle("p-4");
+    menu.classList.toggle("rounded-lg");
+}
+</script>
+
+</body>
+</html>
